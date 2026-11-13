@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Biblioteca Comunitaria</title>
+    <!-- Tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand"> Biblioteca UGB</div>
+            <ul>
+                <li><a href="#inicio" onclick="goToSlide(0, event)">Inicio</a></li>
+                <li><a href="#equipo" onclick="goToSlide(1, event)">Integrantes</a></li>
+                <li><a href="#enlaces">Módulos</a></li>
+                <li><a href="catálogo.html">Catálogo</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content">
+            <span class="badge-hero">Proyecto de Sistemas y Redes</span>
+            <h1>Biblioteca Comunitaria</h1>
+            <p class="tagline">Un espacio de encuentro, lectura y conocimiento accesible para toda la comunidad.</p>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contenedor del Carrusel -->
+        <section class="carousel-container" id="carrusel">
+            <div class="carousel-track">
+                <!-- Tarjeta 0: Descripción -->
+                <div class="card carousel-card active">
+                    <div class="card-header">
+                        <span class="section-tag">Sobre el proyecto</span>
+                        <h2>Descripción del Negocio</h2>
+                    </div>
+                    <p class="lead-text">El <strong>Sistema de Biblioteca Comunitaria</strong> está diseñado para modernizar y facilitar el registro, préstamo y consulta de libros, promoviendo el hábito de la lectura y el acceso equitativo a los recursos educativos.</p>
+                    
+                    <div class="highlights-grid">
+                        <!-- Botón con JS para ir a la página aparte del catálogo -->
+                        <div class="highlight-item" style="cursor: pointer;" onclick="irAlCatalogo()">
+                            <span class="hi-icon"></span>
+                            <div>
+                                <h4>Catálogo Digital →</h4>
+                                <p>Búsqueda rápida de ejemplares disponibles.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="hi-icon"></span>
+                            <div>
+                                <h4>Acceso Comunitario</h4>
+                                <p>Préstamos ágiles para estudiantes y vecinos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 1: Integrantes en cuadrícula moderna -->
+                <div class="card carousel-card">
+                    <div class="card-header">
+                        <span class="section-tag">Equipo de trabajo</span>
+                        <h2>Integrantes del Grupo</h2>
+                    </div>
+                    <div class="team-grid">
+                        <div class="member-card">
+                            <div class="avatar">CA</div>
+                            <div class="member-info">
+                                <strong>Cesia Madai Ávalos Díaz</strong>
+                                <span>Código: SMSS063623</span>
+                            </div>
+                        </div>
+                        <div class="member-card">
+                            <div class="avatar">EO</div>
+                            <div class="member-info">
+                                <strong>Elias Ernesto Orellana Vásquez</strong>
+                                <span>Código: [Código]</span>
+                            </div>
+                        </div>
+                        <div class="member-card">
+                            <div class="avatar">XP</div>
+                            <div class="member-info">
+                                <strong>Xavier Alexander Pérez Bonilla</strong>
+                                <span>Código: [Código]</span>
+                            </div>
+                        </div>
+                        <div class="member-card">
+                            <div class="avatar">AD</div>
+                            <div class="member-info">
+                                <strong>Ariel Adolfo Díaz Sosa</strong>
+                                <span>Código: [Código]</span>
+                            </div>
+                        </div>
+                        <div class="member-card">
+                            <div class="avatar">JG</div>
+                            <div class="member-info">
+                                <strong>Jessica Alexandra Gaitán Aguila</strong>
+                                <span>Código: [Código]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles inferiores del carrusel -->
+            <div class="carousel-controls">
+                <button id="prevBtn" class="carousel-btn" onclick="moveSlide(-1)">← Anterior</button>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="goToSlide(0, event)"></span>
+                    <span class="dot" onclick="goToSlide(1, event)"></span>
+                </div>
+                <button id="nextBtn" class="carousel-btn" onclick="moveSlide(1)">Siguiente →</button>
+            </div>
+        </section>
+
+        <!-- Fuera del carrusel: Secciones de Compañeros -->
+        <section id="enlaces" class="card static-card">
+            <div class="card-header">
+                <span class="section-tag">Arquitectura del sistema</span>
+                <h2>Enlaces a Secciones de Compañeros</h2>
+            </div>
+            <p class="subtitle">Selecciona un módulo para desplegar los detalles técnicos desarrollados por el equipo:</p>
+            
+            <div class="compañero-links">
+                <button class="btn tab-btn" onclick="mostrarSeccion('despliegue', this)">
+                    <span class="btn-icon"></span> Despliegue
+                </button>
+                <button class="btn tab-btn" onclick="mostrarSeccion('seguridad', this)">
+                    <span class="btn-icon"></span> Seguridad
+                </button>
+                <button class="btn tab-btn" onclick="mostrarSeccion('desarrollo', this)">
+                    <span class="btn-icon"></span> Desarrollo
+                </button>
+                <button class="btn tab-btn" onclick="mostrarSeccion('bd', this)">
+                    <span class="btn-icon"></span> Base de datos
+                </button>
+                <button class="btn tab-btn" onclick="mostrarSeccion('calidad', this)">
+                    <span class="btn-icon"></span> Calidad y documentación
+                </button>
+            </div>
+
+            <!-- Contenedores dinámicos -->
+            <div id="despliegue" class="modulo-detalle">
+                <div class="detalle-top">
+                    <h3> Módulo de Despliegue</h3>
+                    <span class="resp-badge">Responsable: Elias Ernesto Orellana Vásquez</span>
+                </div>
+                <p>Configuración del servidor web, alojamiento, dominio y estructura de red utilizada para poner en marcha el sistema de biblioteca.</p>
+            </div>
+
+            <div id="seguridad" class="modulo-detalle">
+                <div class="detalle-top">
+                    <h3> Módulo de Seguridad</h3>
+                    <span class="resp-badge">Responsable: Xavier Alexander Pérez Bonilla</span>
+                </div>
+                <p>Medidas de protección, control de acceso de usuarios, permisos, copias de seguridad y cifrado de datos.</p>
+            </div>
+
+            <div id="desarrollo" class="modulo-detalle">
+                <div class="detalle-top">
+                    <h3> Módulo de Desarrollo</h3>
+                    <span class="resp-badge">Responsable: Cesia Madai Ávalos Díaz</span>
+                </div>
+                <p>Arquitectura del código fuente, lenguajes empleados (HTML, CSS, JS, PHP/Laravel) y funcionalidades principales de préstamos y catálogo.</p>
+            </div>
+
+            <div id="bd" class="modulo-detalle">
+                <div class="detalle-top">
+                    <h3> Módulo de Base de Datos</h3>
+                    <span class="resp-badge">Responsable: Jessica Alexandra Gaitán Aguila</span>
+                </div>
+                <p>Modelo entidad-relación, tablas de libros, socios, préstamos, consultas SQL y gestión de integridad de la información.</p>
+            </div>
+
+            <div id="calidad" class="modulo-detalle">
+                <div class="detalle-top">
+                    <h3> Módulo de Calidad y Documentación</h3>
+                    <span class="resp-badge">Responsable: Ariel Adolfo Díaz Sosa</span>
+                </div>
+                <p>Manuales de usuario, pruebas de funcionamiento, estándares aplicados y documentación técnica general del proyecto.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sistema de Biblioteca Comunitaria — Universidad Gerardo Barrios</p>
+    </footer>
+
+    <!-- Script de control -->
+    <script>
+        // --- 1. Redirección al Catálogo con JS ---
+        function irAlCatalogo() {
+            window.location.href = 'catálogo.html';
+        }
+
+        // --- 2. Lógica del Carrusel ---
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-card');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateCarousel(newIndex) {
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+            
+            currentSlide = newIndex;
+            
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        function moveSlide(direction) {
+            const nextIndex = (currentSlide + direction + slides.length) % slides.length;
+            updateCarousel(nextIndex);
+        }
+
+        function goToSlide(index, event) {
+            if (event) event.preventDefault();
+            updateCarousel(index);
+            const carruselEl = document.getElementById('carrusel');
+            if (carruselEl) {
+                carruselEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // --- 3. Lógica de Secciones de Compañeros ---
+        function mostrarSeccion(idSeccion, botonClicado) {
+            const secciones = document.querySelectorAll('.modulo-detalle');
+            const botones = document.querySelectorAll('.tab-btn');
+            const seccionActual = document.getElementById(idSeccion);
+
+            if (!seccionActual) return;
+
+            const yaEstabaAbierta = seccionActual.classList.contains('visible');
+
+            secciones.forEach(sec => sec.classList.remove('visible'));
+            botones.forEach(btn => btn.classList.remove('btn-activo'));
+
+            if (!yaEstabaAbierta) {
+                seccionActual.classList.add('visible');
+                botonClicado.classList.add('btn-activo');
+            }
+        }
+    </script>
+</body>
+</html>

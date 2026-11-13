@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Digital - Biblioteca Comunitaria</title>
+    <!-- Tipografías de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">Biblioteca UGB</div>
+            <ul>
+                <li><a href="index.html">← Volver al Inicio</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-content">
+            <span class="badge-hero">Módulo de Inventario</span>
+            <h1>Catálogo Digital</h1>
+            <p class="tagline">Consulta de ejemplares, libros disponibles y recursos educativos de la comunidad.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="card static-card">
+            <div class="card-header">
+                <span class="section-tag">Inventario General</span>
+                <h2>Listado de Libros</h2>
+            </div>
+            <p class="subtitle">Explora los libros registrados en el sistema de la biblioteca.</p>
+            
+            <!-- Cuadrícula de Libros -->
+            <div class="books-grid">
+                
+                <!-- Libro 1 -->
+                <article class="book-card">
+                    <!-- Imagen pequeña a la izquierda -->
+                    <img src="imagenes/eletdl.png" alt="Portada El amor en los tiempos del cólera" class="book-cover">
+                    
+                    <!-- Información del libro a la derecha -->
+                    <div class="book-details">
+                        <div class="book-top">
+                            <span class="book-category">Novela / Realismo Mágico</span>
+                            <span class="book-status disponible">Disponible</span>
+                        </div>
+                        <h3>El amor en los tiempos del cólera</h3>
+                        <p class="book-author">Gabriel García Márquez</p>
+                        <p class="book-desc">Una historia sobre el amor incondicional entre Florentino Ariza y Fermina Daza a lo largo de más de cincuenta años en el Caribe colombiano.</p>
+                        <div class="book-footer">
+                            <span class="book-code">Código: LIB-001</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="book-card">
+                    <img src="imagenes/travesurasdelaniñamala.jpg" alt="Portada Travesuras de la niña mala" class="book-cover">
+                    <div class="book-details">
+                        <div class="book-top">
+                            <span class="book-category">Novela / Ficción</span>
+                            <span class="book-status disponible">Disponible</span>
+                        </div>
+                        <h3>Travesuras de la niña mala</h3>
+                        <p class="book-author">Mario Vargas Llosa</p>
+                        <p class="book-desc">La apasionante y tormentosa historia de amor entre Ricardo, un traductor asentado en París, y una mujer impredecible y aventurera que cruza su vida a lo largo de varias décadas en distintas ciudades del mundo.</p>
+                        <div class="book-footer">
+                            <span class="book-code">Código: LIB-002</span>
+                        </div>
+                    </div>
+                </article>
+            
+
+                <article class="book-card">
+                    <img src="imagenes/cronicas_muerte.jpg" alt="Portada Crónicas de una muerte anunciada" class="book-cover">
+                    <div class="book-details">
+                        <div class="book-top">
+                            <span class="book-category">Novela / Crónica</span>
+                            <span class="book-status disponible">Disponible</span>
+                        </div>
+                        <h3>Crónicas de una muerte anunciada</h3>
+                        <p class="book-author">Gabriel García Márquez</p>
+                        <p class="book-desc">La reconstrucción periodística y fatal de los acontecimientos que rodearon el asesinato de Santiago Nasar en un pequeño pueblo ribereño, un crimen que todo el mundo sabía que iba a ocurrir pero que nadie evitó.</p>
+                        <div class="book-footer">
+                            <span class="book-code">Código: LIB-003</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+            <div style="margin-top: 2rem; border-top: 1px solid #EFE4D8; padding-top: 1.5rem;">
+                <a href="index.html" class="carousel-btn" style="text-decoration: none; display: inline-block;">← Regresar a la página principal</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sistema de Biblioteca Comunitaria — Universidad Gerardo Barrios</p>
+    </footer>
+</body>
+</html>
